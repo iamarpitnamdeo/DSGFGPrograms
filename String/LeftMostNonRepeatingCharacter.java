@@ -39,4 +39,39 @@ public class LeftMostNonRepeatingCharacter {
         String s1 = "geeksforgeeks";
         System.out.println("Index of firs non repeting character is "+firstNonRep(s1));
     }
+
+    public static class StringRotations {
+       /* static String leftRotateByOne(String s){
+            char [] temp = s.toCharArray();
+            char temp1 = temp[0];
+            for(int i=1;i<temp.length;i++){
+                temp[i-1]=temp[i];
+            }
+            temp[temp.length-1]=temp1;
+            String s2 = new String(temp);
+            return s2;
+        }
+
+        static boolean areRotationStrings(String s1,String s2){
+                for(int i=0;i<s1.length();i++){
+                    if(s1.equals(s2))
+                        return true;
+                    else
+                        s1=leftRotateByOne(s1);
+                }
+                return false;
+        }*/
+        static boolean areRotationStrings(String s1,String s2){
+            if(s1.length()!=s2.length()) {
+                return false;
+            }
+            return (s1+s1).contains(s2);
+        }
+
+        public static void main(String [] arg){
+            String s1 = "ABCD";
+            String s2 = "CDAB";
+            System.out.println(areRotationStrings(s1,s2));
+        }
+    }
 }
